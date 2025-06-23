@@ -13,7 +13,8 @@ import {
   BarChart3, 
   Zap,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Play
 } from "lucide-react";
 
 const Features = () => {
@@ -29,7 +30,9 @@ const Features = () => {
         "Milestone tracking",
         "Dependency management"
       ],
-      image: "photo-1461749280684-dccba630e2f6"
+      image: "photo-1461749280684-dccba630e2f6",
+      previewTitle: "Interactive Gantt Chart Builder",
+      previewDescription: "Visualize project timelines with drag-and-drop functionality"
     },
     {
       title: "Smart Time & Budget Tracking",
@@ -42,7 +45,9 @@ const Features = () => {
         "Real-time budget monitoring",
         "Expense categorization"
       ],
-      image: "photo-1488590528505-98d2b5aba04b"
+      image: "photo-1488590528505-98d2b5aba04b",
+      previewTitle: "Real-time Budget Dashboard",
+      previewDescription: "Monitor project costs and forecast potential overruns"
     },
     {
       title: "Collaboration Tools",
@@ -55,7 +60,9 @@ const Features = () => {
         "Video conferencing",
         "File sharing and version control"
       ],
-      image: "photo-1486312338219-ce68d2c6f44d"
+      image: "photo-1486312338219-ce68d2c6f44d",
+      previewTitle: "Team Collaboration Hub",
+      previewDescription: "Centralized workspace for seamless team communication"
     },
     {
       title: "AI-Powered Insights",
@@ -68,7 +75,9 @@ const Features = () => {
         "Predictive analytics",
         "Performance recommendations"
       ],
-      image: "photo-1518770660439-4636190af475"
+      image: "photo-1518770660439-4636190af475",
+      previewTitle: "AI-Driven Project Analytics",
+      previewDescription: "Smart insights and automated task prioritization"
     }
   ];
 
@@ -145,10 +154,22 @@ const Features = () => {
               <div className="lg:w-1/2">
                 <Card className="card-hover bg-white border-zenith-card/30 shadow-lg overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="aspect-video bg-gradient-to-br from-zenith-background to-white flex items-center justify-center">
-                      <div className="text-center">
-                        <category.icon className="h-16 w-16 text-zenith-accent mx-auto mb-4" />
-                        <p className="text-zenith-secondary font-medium">Feature Preview</p>
+                    <div className="relative">
+                      <img 
+                        src={`https://images.unsplash.com/${category.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                        alt={category.previewTitle}
+                        className="w-full h-64 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-lg font-semibold">{category.previewTitle}</h3>
+                          <Button size="sm" variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
+                            <Play className="h-4 w-4 mr-2" />
+                            Preview
+                          </Button>
+                        </div>
+                        <p className="text-sm text-white/90">{category.previewDescription}</p>
                       </div>
                     </div>
                   </CardContent>
