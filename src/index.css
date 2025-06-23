@@ -1,6 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
@@ -98,6 +100,20 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-zenith-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-zenith-primary to-zenith-accent bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .button-gradient {
+    @apply bg-gradient-to-r from-zenith-accent to-zenith-primary hover:from-zenith-primary hover:to-zenith-accent transition-all duration-300;
   }
 }
